@@ -9,9 +9,9 @@ export default function ProductsPage() {
       <br />
       {words.map((word) => {
         return (
-          <div key={`animal-div-${word.id}`}>
+          <div key={`word-div-${word.id}`}>
             <Link
-              href={`/animals/${word.id}`}
+              href={`/products/${word.name}`}
               data-test-id={`product-${word.id}`}
             >
               {word.name}
