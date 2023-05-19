@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <main>Hello</main>;
+  return <main>Welcome to my shop!</main>;
 }
