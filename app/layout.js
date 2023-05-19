@@ -5,8 +5,8 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Shop for words',
-  description: 'We offer a selection of the most beautiful words in English',
+  title: 'Cake shop',
+  description: 'We offer a selection of traditional and fantasy cakes',
 };
 
 export default function RootLayout({ children }) {

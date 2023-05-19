@@ -1,23 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { words } from '../../database/words';
+import { cakes } from '../../database/cakes';
 
 export default function ProductsPage() {
   return (
     <main>
       <h1>Here are my products</h1>
       <br />
-      {words.map((word) => {
+      {cakes.map((cake) => {
         return (
-          <div key={`word-div-${word.id}`}>
+          <div key={`word-div-${cake.id}`}>
             <Link
-              href={`/products/${word.name}`}
-              data-test-id={`product-${word.id}`}
+              href={`/products/${cake.name}`}
+              data-test-id={`product-${cake.id}`}
             >
-              {word.name}
+              {cake.name}
             </Link>
             <br />
-            <Image src={`/${word.name}.png`} width={200} height={100} />
+            <Image src={`/${cake.name}.jpg`} width={200} height={300} />
           </div>
         );
       })}
