@@ -1,0 +1,14 @@
+.cakeCard {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-top: auto;
+  }
+}
