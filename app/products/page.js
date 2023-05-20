@@ -11,7 +11,7 @@ export default function ProductsPage() {
         return (
           <div key={`word-div-${cake.id}`}>
             <Link
-              href={`/products/${cake.name}`}
+              href={`/products/${cake.id}`}
               data-test-id={`product-${cake.id}`}
             >
               {cake.name}
