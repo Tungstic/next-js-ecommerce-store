@@ -1,26 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { cakes } from '../../database/cakes';
+import styles from './page.module.scss';
 
 export default function ProductsPage() {
   return (
     <main>
-      <h1>Here are my products</h1>
-      <br />
-      {cakes.map((cake) => {
-        return (
-          <div key={`word-div-${cake.id}`}>
-            <Link
-              href={`/products/${cake.id}`}
-              data-test-id={`product-${cake.id}`}
-            >
-              {cake.name}
-            </Link>
-            <br />
-            <Image src={`/${cake.name}.jpg`} width={200} height={300} />
-          </div>
-        );
-      })}
+      <h1>Here are our cakes</h1>
+      <div className={styles.gridOfCakes}>
+        {cakes.map((cake) => {
+          return (
+            <div className={styles.oneCake} key={`word-div-${cake.id}`}>
+              <Image src={`/${cake.name}.jpg`} width={200} height={300} />
+              <Link
+                href={`/products/${cake.id}`}
+                data-test-id={`product-${cake.id}`}
+              >
+                {cake.name}
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </main>
   );
 }
