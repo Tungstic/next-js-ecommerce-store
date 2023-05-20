@@ -9,15 +9,21 @@ export default function CakePage({ params }) {
 
   console.log(singleCake);
 
-  /*   if (!singleCake) {
+  if (!singleCake) {
     notFound();
-  } */
+  }
 
   return (
     <main>
-      <h1>{singleCake.name}</h1>
-      <Image src={`/${singleCake.name}.jpg`} width={200} height={300} />
+      <h1>{`${singleCake.name} cake`}</h1>
+      <Image
+        data-test-id="product-image"
+        src={`/${singleCake.name}.jpg`}
+        width={200}
+        height={300}
+      />
       this is a page for the {singleCake.name} cake
+      <div data-test-id="product-price">{`price: €${singleCake.price}`}</div>
     </main>
   );
 }
