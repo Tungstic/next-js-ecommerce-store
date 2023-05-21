@@ -8,8 +8,6 @@ export const dynamic = 'force-dynamic';
 export default function CakePage({ params }) {
   const singleCake = getCakeById(Number(params.cakeId));
 
-  console.log(singleCake);
-
   if (!singleCake) {
     notFound();
   }
@@ -29,10 +27,15 @@ export default function CakePage({ params }) {
         <div>{singleCake.description}</div>
         <div data-test-id="product-price">{`price: €${singleCake.price}`}</div>
         <label>
-          Quantity
-          <input data-test-id="product-quantity" />
+          Quantity (maximum 10, if you need more, please contact us)
+          <input
+            data-test-id="product-quantity"
+            type="number"
+            min="1"
+            max="10"
+          />
         </label>
-        <button>Add to cart</button>
+        <button data-test-id="product-add-to-cart">Add to cart</button>
       </div>
     </main>
   );

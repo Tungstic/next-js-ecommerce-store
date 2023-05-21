@@ -2,7 +2,7 @@ const cherryCakeDescription =
   'Introducing our delectable Cherry Cake, a delightful blend of rich flavors and natural sweetness. Indulge in layers of moist vanilla sponge infused with tangy cherry compote, complemented by a luscious cream cheese frosting. Topped with juicy cherries, this heavenly treat is perfect for any occasion. Order now and experience pure bliss with every bite!';
 
 const chocolateCakeDescription =
-  "Dive into chocolate heaven with our decadent Chocolate Cake. Sink your teeth into layers of moist chocolate sponge generously slathered with velvety chocolate ganache. Each bite offers a symphony of intense cocoa flavors that will satisfy the cravings of any chocolate enthusiast. Indulge yourself in this timeless classic that's perfect for any chocolate lover.";
+  "Dive into chocolate heaven with our decadent Chocolate Cake. Sink your teeth into layers of moist chocolate sponge generously slathered with velvety vanilla ganache. Each bite offers a symphony of intense cocoa flavors that will satisfy the cravings of any chocolate enthusiast. Indulge yourself in this timeless classic that's perfect for any chocolate lover.";
 
 const easterCakeDescription =
   'Celebrate the joy of Easter with our delightful Easter Cake. This festive creation features a light and fluffy sponge cake adorned with pastel-colored buttercream, sprinkles, and charming Easter-themed decorations. With a choice of delectable flavors, this cake is a delightful addition to any Easter gathering, bringing smiles and sweetness to all.';
