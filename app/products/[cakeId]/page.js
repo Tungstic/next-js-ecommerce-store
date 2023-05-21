@@ -26,9 +26,12 @@ export default function CakePage({ params }) {
         />
       </div>
       <div className={styles.description}>
-        <div>this is a page for the {singleCake.name} cake</div>
+        <div>{singleCake.description}</div>
         <div data-test-id="product-price">{`price: €${singleCake.price}`}</div>
-        <div>Quantity</div>
+        <label>
+          Quantity
+          <input data-test-id="product-quantity" />
+        </label>
         <button>Add to cart</button>
       </div>
     </main>
