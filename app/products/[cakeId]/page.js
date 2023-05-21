@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getCakeById } from '../../../database/cakes';
+import AddToCart from './AddToCart';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -26,16 +27,7 @@ export default function CakePage({ params }) {
       <div className={styles.description}>
         <div>{singleCake.description}</div>
         <div data-test-id="product-price">{`price: €${singleCake.price}`}</div>
-        <label>
-          Quantity (maximum 10, if you need more, please contact us)
-          <input
-            data-test-id="product-quantity"
-            type="number"
-            min="1"
-            max="10"
-          />
-        </label>
-        <button data-test-id="product-add-to-cart">Add to cart</button>
+        <AddToCart />
       </div>
     </main>
   );
