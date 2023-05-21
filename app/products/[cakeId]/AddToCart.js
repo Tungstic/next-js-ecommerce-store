@@ -1,13 +1,13 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { addCakeToCart } from './actions';
 
-// import {useRouter} from
-
-export default function AddToCart() {
+export default function AddToCart(props) {
   // declare state variable for quantity
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
 
   function incrementCake() {
     if (quantity >= 10) {
@@ -30,7 +30,12 @@ export default function AddToCart() {
         <input data-test-id="product-quantity" value={quantity} />
         <button onClick={decrementCake}>-</button>
       </label>
-      <form action={async () => addCakeToCart(quantity)}>
+      <form
+        action={async () => {
+          router.refresh();
+          await addCakeToCart(props.cakeId, quantity);
+        }}
+      >
         <button data-test-id="product-add-to-cart">Add to cart</button>
       </form>
     </>

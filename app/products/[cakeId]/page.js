@@ -27,7 +27,7 @@ export default function CakePage({ params }) {
       <div className={styles.description}>
         <div>{singleCake.description}</div>
         <div data-test-id="product-price">{`price: €${singleCake.price}`}</div>
-        <AddToCart />
+        <AddToCart cakeId={singleCake.id} />
       </div>
     </main>
   );
