@@ -1,6 +1,8 @@
 import './globals.scss';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { getCookie } from '../util/cookies';
+import { parseJson } from '../util/json';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,6 +12,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const cakeQuantityCookie = getCookie('cart');
+
+  // get the same as an array of objects
+  const cakeQuantities = !cakeQuantityCookie
+    ? []
+    : parseJson(cakeQuantityCookie);
+
+  const totalQuantity = cakeQuantities.reduce((acc, currentValue) => {
+    return acc + currentValue.quantity;
+  }, 0);
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -19,6 +32,7 @@ export default function RootLayout({ children }) {
             <Link href="/products">Products</Link>
             <Link href="/cart" data-test-id="cart-link">
               Shopping cart
+              <span>{`(${totalQuantity})`}</span>
             </Link>
           </nav>
           {children}
