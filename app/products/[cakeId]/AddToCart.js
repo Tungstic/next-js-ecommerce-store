@@ -25,7 +25,7 @@ export default function AddToCart(props) {
   return (
     <>
       <label>
-        Quantity
+        Quantity (max. 10)
         <button onClick={incrementCake}>+</button>
         <input data-test-id="product-quantity" value={quantity} />
         <button onClick={decrementCake}>-</button>
