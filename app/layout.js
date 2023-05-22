@@ -13,13 +13,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/cart">Shopping cart</Link>
-          <Link href="/checkout">Checkout</Link>
-        </nav>
-        {children}
+        <header>
+          <nav>
+            <Link href="/">Home</Link>
+            <Link href="/products">Products</Link>
+            <Link href="/cart" data-test-id="cart-link">
+              Shopping cart
+            </Link>
+          </nav>
+          {children}
+        </header>
       </body>
     </html>
   );
