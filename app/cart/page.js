@@ -29,12 +29,16 @@ export default function CartPage() {
 
   // get the total price of all cakes (price and quantity are numbers)
   function getTotalPrice() {
-    const eachCakePrice = order.map((obj) => {
-      return obj.price * obj.quantity;
-    });
-    return eachCakePrice.reduce((acc, currentValue) => {
-      return acc + currentValue;
-    });
+    if (order.length > 0) {
+      const eachCakePrice = order.map((obj) => {
+        return obj.price * obj.quantity;
+      });
+      return eachCakePrice.reduce((acc, currentValue) => {
+        return acc + currentValue;
+      });
+    } else {
+      return '0';
+    }
   }
   const totalPrice = getTotalPrice();
 
