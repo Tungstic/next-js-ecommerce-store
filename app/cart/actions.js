@@ -15,8 +15,6 @@ export async function removeCakeFromCart(cakeId) {
     return obj.id === cakeId;
   });
 
-  console.log(cakeToRemove);
-
   cakeQuantities.splice(cakeToRemove, 1);
 
   await cookies().set('cart', JSON.stringify(cakeQuantities));

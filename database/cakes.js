@@ -11,7 +11,7 @@ const macaroonCakeDescription =
   'Experience a taste of elegance with our exquisite Macaroon Cake. Layers of delicate almond sponge cake are lovingly filled with silky buttercream and adorned with an array of colorful macaroons. This delightful creation offers a harmonious blend of textures and flavors, making it an unforgettable treat for any celebration.';
 
 const oreoCakeDescription =
-  'Treat your taste buds to our irresistible Oreo Cake, a symphony of chocolatey goodness. Sink into layers of moist chocolate sponge generously filled with crushed Oreo cookies and luscious cream. Topped with a velvety Oreo buttercream frosting and adorned with cookie crumbles, this cake is an absolute delight for Oreo lovers everywhere.';
+  'Treat your taste buds to our irresistible Oreo Cake, a symphony of chocolatey goodness. Sink into layers of moist chocolate sponge generously filled with crushed Oreo cookies and luscious cream. Topped with a velvety Oreo buttercream frosting and adorned with whole cookies, this cake is an absolute delight for Oreo lovers everywhere.';
 
 const catCakeDescription =
   "Celebrate in style with our whimsical Cat Cake, a purr-fectly charming confection. This adorable creation features a fluffy vanilla sponge, expertly shaped and decorated as a cute feline friend. Complete with vibrant, handcrafted fondant details and a choice of delightful flavors, it's a delightful centerpiece for any cat lover's special occasion.";
