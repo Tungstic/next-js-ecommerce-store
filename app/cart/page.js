@@ -1,6 +1,7 @@
 import { cakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import styles from './page.module.scss';
 
 export default function CartPage() {
   // get all current cakes added to cart as a cookie
@@ -30,8 +31,12 @@ export default function CartPage() {
       <ul>
         {order.map((item) => {
           return (
-            <li key={`cake ${item.id}`}>
-              {item.name}
+            <li
+              data-test-id={`cart-product-${item.id}`}
+              className={styles.cakeItem}
+              key={`cake ${item.id}`}
+            >
+              {`${item.name} cake €`}
               {item.price}
               <button>Remove</button>
             </li>
