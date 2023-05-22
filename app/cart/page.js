@@ -7,8 +7,7 @@ export default function CartPage() {
   // get all current cakes added to cart as a cookie
   const cakeQuantityCookie = getCookie('nameOfCookie');
 
-  // get the same as an array of json objects
-
+  // get the same as an array of objects
   const cakeQuantities = !cakeQuantityCookie
     ? []
     : parseJson(cakeQuantityCookie);
@@ -26,8 +25,18 @@ export default function CartPage() {
     }
     return order;
   }
+  findOrderedCakes();
 
-  console.log(findOrderedCakes());
+  // get the total price of all cakes (price and quantity are numbers)
+  function getTotalPrice() {
+    const eachCakePrice = order.map((obj) => {
+      return obj.price * obj.quantity;
+    });
+    return eachCakePrice.reduce((acc, currentValue) => {
+      return acc + currentValue;
+    });
+  }
+  const totalPrice = getTotalPrice();
 
   return (
     <main>
@@ -51,7 +60,7 @@ export default function CartPage() {
           );
         })}
       </ul>
-      <div>Total price</div>
+      <div data-test-id="cart-total">Total price is: {` €${totalPrice}`}</div>
       <button>Checkout button</button>
     </main>
   );
