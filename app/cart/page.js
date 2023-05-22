@@ -2,6 +2,7 @@ import { cakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
+import RemoveFromCart from './RemoveButton';
 
 export default function CartPage() {
   // get all current cakes added to cart as a cookie
@@ -55,7 +56,7 @@ export default function CartPage() {
             >
               {`${item.name} cake €`}
               {item.price}
-              <button>Remove</button>
+              <RemoveFromCart cakeId={item.id} />
               <div data-test-id={`cart-product-quantity-${item.id}`}>
                 Quantity:
                 {` ${item.quantity}`}
