@@ -61,7 +61,7 @@ export default function CartPage() {
         })}
       </ul>
       <div data-test-id="cart-total">Total price is: {` €${totalPrice}`}</div>
-      <button>Checkout button</button>
+      <button data-test-id="cart-checkout">Checkout button</button>
     </main>
   );
 }

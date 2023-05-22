@@ -1,11 +1,11 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 
-export async function addCakeToCart(cakeId, quantity) {
-  const cakeQuantityCookie = getCookie('nameOfCookie');
+export async function removeCakeFromCart(cakeId, quantity) {
+  /* const cakeQuantityCookie = getCookie('nameOfCookie');
 
   const cakeQuantities = !cakeQuantityCookie
     ? []
@@ -24,5 +24,5 @@ export async function addCakeToCart(cakeId, quantity) {
     });
   }
 
-  await cookies().set('nameOfCookie', JSON.stringify(cakeQuantities));
+  await cookies().set('nameOfCookie', JSON.stringify(cakeQuantities)); */
 }
