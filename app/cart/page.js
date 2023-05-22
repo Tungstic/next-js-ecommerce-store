@@ -11,8 +11,6 @@ export default function CartPage() {
     ? []
     : parseJson(cakeQuantityCookie);
 
-  console.log(cakeQuantities);
-
   return (
     <main>
       <h1>Shopping cart</h1>
