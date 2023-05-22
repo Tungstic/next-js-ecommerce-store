@@ -13,8 +13,8 @@ export default function CartPage() {
     ? []
     : parseJson(cakeQuantityCookie);
 
-  // get an array of only those cakes that are in the cart
-  let order = [];
+  // get an array of only those cakes that are in the cart + their quantities
+  const order = [];
   function findOrderedCakes() {
     for (let i = 0; i < cakeQuantities.length; i++) {
       const orderedCake = cakes.find(
@@ -43,6 +43,10 @@ export default function CartPage() {
               {`${item.name} cake €`}
               {item.price}
               <button>Remove</button>
+              <div data-test-id={`cart-product-quantity-${item.id}`}>
+                Quantity:
+                {` ${item.quantity}`}
+              </div>
             </li>
           );
         })}
