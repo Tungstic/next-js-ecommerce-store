@@ -5,7 +5,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
 export async function removeCakeFromCart(cakeId) {
-  const cakeQuantityCookie = getCookie('nameOfCookie');
+  const cakeQuantityCookie = getCookie('cart');
 
   const cakeQuantities = !cakeQuantityCookie
     ? []
@@ -19,5 +19,5 @@ export async function removeCakeFromCart(cakeId) {
 
   cakeQuantities.splice(cakeToRemove, 1);
 
-  await cookies().set('nameOfCookie', JSON.stringify(cakeQuantities));
+  await cookies().set('cart', JSON.stringify(cakeQuantities));
 }

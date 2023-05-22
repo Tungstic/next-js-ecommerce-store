@@ -6,7 +6,7 @@ import RemoveFromCart from './RemoveButton';
 
 export default function CartPage() {
   // get all current cakes added to cart as a cookie
-  const cakeQuantityCookie = getCookie('nameOfCookie');
+  const cakeQuantityCookie = getCookie('cart');
 
   // get the same as an array of objects
   const cakeQuantities = !cakeQuantityCookie
