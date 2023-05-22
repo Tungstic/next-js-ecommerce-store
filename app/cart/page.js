@@ -14,16 +14,20 @@ export default function CartPage() {
     : parseJson(cakeQuantityCookie);
 
   // get an array of only those cakes that are in the cart
-  const order = [];
+  let order = [];
   function findOrderedCakes() {
-    const orderedCakes = cakeQuantities.map((cakeQuantity) => cakeQuantity.id);
-
-    for (let i = 0; i < orderedCakes.length; i++) {
-      order.push(cakes.find((cake) => cake.id === orderedCakes[i]));
+    for (let i = 0; i < cakeQuantities.length; i++) {
+      const orderedCake = cakes.find(
+        (cake) => cake.id === cakeQuantities[i]['id'],
+      );
+      if (orderedCake.id === cakeQuantities[i]['id']) {
+        order.push({ ...orderedCake, quantity: cakeQuantities[i]['quantity'] });
+      }
     }
     return order;
   }
-  findOrderedCakes();
+
+  console.log(findOrderedCakes());
 
   return (
     <main>
