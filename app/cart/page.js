@@ -47,30 +47,36 @@ export default function CartPage() {
   return (
     <main>
       <h1>Shopping cart</h1>
-      <ul>
-        {order.map((item) => {
-          return (
-            <li
-              data-test-id={`cart-product-${item.id}`}
-              className={styles.cakeItem}
-              key={`cake ${item.id}`}
-            >
-              {`${item.name} cake €`}
-              {item.price}
-              <div data-test-id={`cart-product-quantity-${item.id}`}>
-                Quantity:
-                {` ${item.quantity}`}
-              </div>
-              <RemoveFromCart
-                cakeId={item.id}
-                data-test-id={`cart-product-remove-${item.id}`}
-              />
-            </li>
-          );
-        })}
-      </ul>
+      {order.length > 0 && (
+        <ul>
+          {order.map((item) => {
+            return (
+              <li
+                data-test-id={`cart-product-${item.id}`}
+                className={styles.cakeItem}
+                key={`cake ${item.id}`}
+              >
+                {`${item.name} cake €`}
+                {item.price}
+                <div data-test-id={`cart-product-quantity-${item.id}`}>
+                  Quantity:
+                  {` ${item.quantity}`}
+                </div>
+                <RemoveFromCart
+                  cakeId={item.id}
+                  data-test-id={`cart-product-remove-${item.id}`}
+                />
+              </li>
+            );
+          })}
+        </ul>
+      )}
       <div data-test-id="cart-total">Total price is: {` €${totalPrice}`}</div>
-      <CheckoutButton />
+      {order.length > 0 ? (
+        <CheckoutButton data-test-id="cart-checkout" />
+      ) : (
+        'nothing to checkout'
+      )}
     </main>
   );
 }
