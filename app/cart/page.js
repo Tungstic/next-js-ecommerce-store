@@ -1,6 +1,7 @@
 import { cakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
 import RemoveFromCart from './RemoveButton';
 
@@ -69,7 +70,7 @@ export default function CartPage() {
         })}
       </ul>
       <div data-test-id="cart-total">Total price is: {` €${totalPrice}`}</div>
-      <button data-test-id="cart-checkout">Checkout button</button>
+      <CheckoutButton />
     </main>
   );
 }
