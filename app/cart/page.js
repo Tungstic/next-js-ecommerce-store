@@ -56,14 +56,14 @@ export default function CartPage() {
             >
               {`${item.name} cake €`}
               {item.price}
-              <RemoveFromCart
-                cakeId={item.id}
-                data-test-id={`cart-product-remove-${item.id}`}
-              />
               <div data-test-id={`cart-product-quantity-${item.id}`}>
                 Quantity:
                 {` ${item.quantity}`}
               </div>
+              <RemoveFromCart
+                cakeId={item.id}
+                data-test-id={`cart-product-remove-${item.id}`}
+              />
             </li>
           );
         })}
