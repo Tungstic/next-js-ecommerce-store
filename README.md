@@ -2,4 +2,5 @@
 Blue diamond - 'use server';
 Pink diamond - 'use client';
 
-![updated_structure](https://github.com/Tungstic/next-js-ecommerce-store/assets/115181901/c918f196-9f33-4413-a6e4-66c1eee1f071)
+
+![file_structure](https://github.com/Tungstic/next-js-ecommerce-store/assets/115181901/9ef6a4c5-8ea6-4fba-bf09-6f51750730e8)
