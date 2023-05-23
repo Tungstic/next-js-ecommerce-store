@@ -1,3 +1,4 @@
+import ConfirmOrderButton from './ConfirmOrder';
 import styles from './page.module.scss';
 
 export default function CheckoutPage() {
@@ -49,7 +50,7 @@ export default function CheckoutPage() {
             <input />
           </label>
         </label>
-        <button>Confirm order</button>
+        <ConfirmOrderButton />
       </form>
     </main>
   );
