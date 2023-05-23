@@ -6,7 +6,7 @@ export default function ConfirmOrderButton() {
   const router = useRouter();
 
   return (
-    <button type="button" onClick={() => router.push('/checkout/thankYou')}>
+    <button type="button" onClick={() => router.push('/checkout/thank-you')}>
       Confirm order
     </button>
   );
