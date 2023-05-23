@@ -1,18 +1,13 @@
-import Link from 'next/link';
-import React from 'react';
+'use client';
 
-const MyButton = React.forwardRef(({ onClick, href }, ref) => {
-  return (
-    <a href={href} onClick={onClick} ref={ref}>
-      Go to checkout
-    </a>
-  );
-});
+import { useRouter } from 'next/navigation';
 
 export default function CheckoutButton() {
+  const router = useRouter();
+
   return (
-    <Link href="/checkout" passHref legacyBehavior>
-      <MyButton />
-    </Link>
+    <button type="button" onClick={() => router.push('/checkout')}>
+      Go to checkout
+    </button>
   );
 }
