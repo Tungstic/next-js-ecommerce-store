@@ -1,6 +1,5 @@
 import { cakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
-import getTotalPrice from '../../util/GetTotalPrice';
 import { parseJson } from '../../util/json';
 import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
@@ -31,7 +30,19 @@ export default function CartPage() {
   findOrderedCakes();
 
   // get total price of the current order
-  const totalPrice = getTotalPrice(order);
+  function getTotalPrice() {
+    if (order.length > 0) {
+      const eachCakePrice = order.map((obj) => {
+        return obj.price * obj.quantity;
+      });
+      return eachCakePrice.reduce((acc, currentValue) => {
+        return acc + currentValue;
+      });
+    } else {
+      return '0';
+    }
+  }
+  const totalPrice = getTotalPrice();
 
   return (
     <main>
