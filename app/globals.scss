@@ -16,3 +16,14 @@ nav {
   justify-content: flex-end;
   font-size: 1.5rem;
 }
+
+button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  margin-left: 0;
+  border-radius: 5%;
+}
+
+button:hover {
+  background-color: #d3ddf0;
+}

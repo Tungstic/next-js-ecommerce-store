@@ -71,7 +71,9 @@ export default function CartPage() {
           })}
         </ul>
       )}
-      <div data-test-id="cart-total">Total price is: {` €${totalPrice}`}</div>
+      <div className={styles.total} data-test-id="cart-total">
+        Total price is: {` €${totalPrice}`}
+      </div>
       {order.length > 0 ? (
         <CheckoutButton data-test-id="cart-checkout" />
       ) : (
