@@ -1,8 +1,7 @@
 import { cakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import ConfirmOrderButton from './ConfirmOrder';
-import styles from './page.module.scss';
+import UserInfoForm from './UserInfoForm';
 
 export default function CheckoutPage() {
   // get all current cakes added to cart as a cookie
@@ -50,49 +49,7 @@ export default function CheckoutPage() {
         Please fill out and submit the form by clicking "Confirm order" button
       </div>
 
-      <form className={styles.info}>
-        <label>
-          First name
-          <input />
-        </label>
-        <label>
-          Last name
-          <input />
-        </label>
-        <label>
-          Email
-          <input />
-        </label>
-        <label>
-          Address
-          <input />
-        </label>
-        <label>
-          City
-          <input />
-        </label>
-        <label>
-          Postal code
-          <input />
-        </label>
-        <label>
-          Country
-          <input />
-        </label>
-        <label>
-          Credit card
-          <input />
-          <label>
-            Expiration date
-            <input />
-          </label>
-          <label>
-            Security code
-            <input />
-          </label>
-        </label>
-        <ConfirmOrderButton />
-      </form>
+      <UserInfoForm />
     </main>
   );
 }
