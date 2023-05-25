@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { addCakeToCart } from './actions';
+import styles from './addToCart.module.scss';
 
 export default function AddToCart(props) {
   // declare state variable for quantity
@@ -24,7 +25,7 @@ export default function AddToCart(props) {
 
   return (
     <>
-      <label>
+      <label className={styles.moreOrLessCake}>
         Quantity (max. 10)
         <button onClick={incrementCake}>+</button>
         <input data-test-id="product-quantity" value={quantity} />

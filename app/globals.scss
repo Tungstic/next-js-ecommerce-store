@@ -2,6 +2,8 @@
 
 * {
   margin: 0;
+  margin-left: 16px;
+  margin-right: 16px;
   box-sizing: border-box;
   background-color: #eaebed;
   font-family: 'Ysabeau', sans-serif;
@@ -13,8 +15,4 @@ nav {
   padding: 24px;
   justify-content: flex-end;
   font-size: 1.5rem;
-
-  span {
-    padding: 8px;
-  }
 }
