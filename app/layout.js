@@ -37,6 +37,19 @@ export default function RootLayout({ children }) {
           </nav>
           {children}
         </header>
+
+        <footer>
+          <hr />
+          <div>
+            <div>
+              <p>Address: Belgard Rd, Tallaght, Dublin 24, D24 X2FC, Ireland</p>
+              <p>Phone: +353 1 462 4200</p>
+              <p>Email: info@letscake.ie</p>
+            </div>
+            <div>Opening hours: Mon-Fri, 9:00 - 18:00</div>
+            <div>Copyright © 2023 Let's cake. All rights reserved.</div>
+          </div>
+        </footer>
       </body>
     </html>
   );

@@ -7,7 +7,6 @@
   box-sizing: border-box;
   background-color: #eaebed;
   font-family: 'Ysabeau', sans-serif;
-  border: 1px solid red;
 }
 
 nav {
@@ -27,4 +26,23 @@ button {
 
 button:hover {
   background-color: #d3ddf0;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+footer {
+  margin-top: 64px;
+  bottom: 0;
+
+  & > div {
+    display: flex;
+    padding: 16px;
+    gap: 16px;
+
+    & > * {
+      margin-left: 0;
+    }
+  }
 }

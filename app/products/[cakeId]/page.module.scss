@@ -1,12 +1,16 @@
 .cakeCard {
   display: flex;
-  gap: 48px;
+  gap: 16px;
   justify-content: center;
 }
 
-.description {
+.text {
   display: flex;
   flex-direction: column;
+
+  & > div {
+    padding-top: 56px;
+  }
 
   button {
     margin-top: auto;
