@@ -77,7 +77,7 @@ export default function CartPage() {
       {order.length > 0 ? (
         <CheckoutButton data-test-id="cart-checkout" />
       ) : (
-        'nothing to checkout'
+        <div>Nothing to checkout</div>
       )}
     </main>
   );
