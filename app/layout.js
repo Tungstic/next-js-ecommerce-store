@@ -7,8 +7,8 @@ import { parseJson } from '../util/json';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Cake shop',
-  description: 'We offer a selection of traditional and fantasy cakes',
+  title: "Let's cake",
+  description: 'We sell a selection of traditional and fantasy cakes',
 };
 
 export default function RootLayout({ children }) {
