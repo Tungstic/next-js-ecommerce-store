@@ -6,8 +6,8 @@ import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default function CakePage({ params }) {
-  const singleCake = getCakeById(Number(params.cakeId));
+export default async function CakePage({ params }) {
+  const singleCake = await getCakeById(Number(params.cakeId));
 
   if (!singleCake) {
     notFound();

@@ -1,9 +1,10 @@
-import { cakes } from '../../database/cakes';
+import { getCakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import UserInfoForm from './UserInfoForm';
 
-export default function CheckoutPage() {
+export default async function CheckoutPage() {
+  const cakes = await getCakes();
   // get all current cakes added to cart as a cookie
   const cakeQuantityCookie = getCookie('cart');
 
