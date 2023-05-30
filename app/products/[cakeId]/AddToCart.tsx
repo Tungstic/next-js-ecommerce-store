@@ -5,7 +5,11 @@ import { useState } from 'react';
 import { addCakeToCart } from './actions';
 import styles from './addToCart.module.scss';
 
-export default function AddToCart(props) {
+type Props = {
+  cakeId: number;
+};
+
+export default function AddToCart(props: Props) {
   // declare state variable for quantity
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
