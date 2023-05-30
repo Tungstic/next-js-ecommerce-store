@@ -6,8 +6,14 @@ import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default async function CakePage({ params }) {
-  const singleCake = await getCakeById(Number(params.cakeId));
+type Props = {
+  params: {
+    cakeId: string;
+  };
+};
+
+export default async function CakePage(props: Props) {
+  const singleCake = await getCakeById(Number(props.params.cakeId));
 
   if (!singleCake) {
     notFound();
@@ -20,6 +26,7 @@ export default async function CakePage({ params }) {
         <Image
           data-test-id="product-image"
           src={`/${singleCake.name}.jpg`}
+          alt={`the photo of the ${singleCake.name}`}
           width={200}
           height={300}
         />
