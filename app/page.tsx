@@ -9,6 +9,7 @@ export default function HomePage() {
         <Image
           src="/main.jpg"
           alt="cake decorated with flowers"
+          priority={true}
           width={600}
           height={400}
         />

@@ -25,7 +25,10 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={inter.className}
+        style={{ backgroundColor: 'rgb(234, 235, 237)' }}
+      >
         <header>
           <nav>
             <Link href="/">Home</Link>
