@@ -3,7 +3,11 @@
 import { useRouter } from 'next/navigation';
 import { removeCakeFromCart } from './actions';
 
-export default function RemoveFromCart(props) {
+type Props = {
+  cakeId: number;
+};
+
+export default function RemoveFromCart(props: Props) {
   const router = useRouter();
 
   return (
