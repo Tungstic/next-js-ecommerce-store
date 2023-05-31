@@ -32,10 +32,15 @@ export default function AddToCart(props: Props) {
       <label className={styles.moreOrLessCake}>
         Quantity (max. 10)
         <button onClick={incrementCake}>+</button>
-        <input data-test-id="product-quantity" value={quantity} />
+        <input
+          name="show-quantity"
+          data-test-id="product-quantity"
+          value={quantity}
+        />
         <button onClick={decrementCake}>-</button>
       </label>
       <form
+        name="cake-to-cookies"
         action={async () => {
           router.refresh();
           await addCakeToCart(props.cakeId, quantity);
