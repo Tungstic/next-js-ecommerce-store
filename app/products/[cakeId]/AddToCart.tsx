@@ -33,6 +33,7 @@ export default function AddToCart(props: Props) {
         Quantity (max. 10)
         <button onClick={incrementCake}>+</button>
         <input
+          readOnly
           name="show-quantity"
           data-test-id="product-quantity"
           value={quantity}
