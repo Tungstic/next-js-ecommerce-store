@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
         <header>
           <nav>
             <Link href="/">Home</Link>
-            <Link href="/products">Products</Link>
+            <Link href="/products" data-test-id="products-link">
+              Products
+            </Link>
             <Link href="/cart" data-test-id="cart-link">
               Shopping cart
               <span data-test-id="cart-count">{`(${totalQuantity})`}</span>
