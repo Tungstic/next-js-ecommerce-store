@@ -16,7 +16,7 @@ export async function addCakeToCart(cakeId, quantity) {
   });
 
   if (cakeToUpdate) {
-    cakeToUpdate.quantity = quantity;
+    cakeToUpdate.quantity = cakeToUpdate.quantity + quantity;
   } else {
     cakeQuantities.push({
       id: cakeId,
