@@ -17,7 +17,6 @@ test('checkout test', async ({ page }) => {
   await expect(page.getByTestId('checkout-confirm-order')).not.toBeDisabled();
 
   await page.getByTestId('checkout-confirm-order').click();
-  // await page.waitForURL('http://localhost:3000/checkout/thank-you');
-  await page.goto('http://localhost:3000/checkout/thank-you');
+  await page.waitForURL('http://localhost:3000/checkout/thank-you');
   await expect(page).toHaveURL('http://localhost:3000/checkout/thank-you');
 });
