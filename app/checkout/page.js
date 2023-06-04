@@ -1,6 +1,8 @@
 import { getCakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import findOrderedCakes from '../cart/findOrderedCakes';
+import getTotalPrice from '../cart/getTotalPrice';
 import UserInfoForm from './UserInfoForm';
 
 export default async function CheckoutPage() {
@@ -15,33 +17,10 @@ export default async function CheckoutPage() {
 
   // get an array of only those cakes that are in the cart + their quantities
   const order = [];
-  function findOrderedCakes() {
-    for (let i = 0; i < cakeQuantities.length; i++) {
-      const orderedCake = cakes.find(
-        (cake) => cake.id === cakeQuantities[i]['id'],
-      );
-      if (orderedCake.id === cakeQuantities[i]['id']) {
-        order.push({ ...orderedCake, quantity: cakeQuantities[i]['quantity'] });
-      }
-    }
-    return order;
-  }
-  findOrderedCakes();
+  findOrderedCakes(order, cakeQuantities, cakes);
 
   // get total price of the current order
-  function getTotalPrice() {
-    if (order.length > 0) {
-      const eachCakePrice = order.map((obj) => {
-        return obj.price * obj.quantity;
-      });
-      return eachCakePrice.reduce((acc, currentValue) => {
-        return acc + currentValue;
-      });
-    } else {
-      return '0';
-    }
-  }
-  const totalPrice = getTotalPrice();
+  const totalPrice = getTotalPrice(order);
 
   return (
     <main>

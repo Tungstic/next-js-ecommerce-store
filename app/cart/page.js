@@ -3,6 +3,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutButton from './CheckoutButton';
 import findOrderedCakes from './findOrderedCakes';
+import getTotalPrice from './getTotalPrice';
 import styles from './page.module.scss';
 import RemoveFromCart from './RemoveButton';
 
@@ -21,19 +22,7 @@ export default async function CartPage() {
   findOrderedCakes(order, cakeQuantities, cakes);
 
   // get total price of the current order
-  function getTotalPrice() {
-    if (order.length > 0) {
-      const eachCakePrice = order.map((obj) => {
-        return obj.price * obj.quantity;
-      });
-      return eachCakePrice.reduce((acc, currentValue) => {
-        return acc + currentValue;
-      });
-    } else {
-      return '0';
-    }
-  }
-  const totalPrice = getTotalPrice();
+  const totalPrice = getTotalPrice(order);
 
   return (
     <main>
