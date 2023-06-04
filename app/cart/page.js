@@ -2,6 +2,7 @@ import { getCakes } from '../../database/cakes';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutButton from './CheckoutButton';
+import findOrderedCakes from './findOrderedCakes';
 import styles from './page.module.scss';
 import RemoveFromCart from './RemoveButton';
 
@@ -17,18 +18,7 @@ export default async function CartPage() {
 
   // get an array of only those cakes that are in the cart + their quantities
   const order = [];
-  function findOrderedCakes() {
-    for (let i = 0; i < cakeQuantities.length; i++) {
-      const orderedCake = cakes.find(
-        (cake) => cake.id === cakeQuantities[i]['id'],
-      );
-      if (orderedCake.id === cakeQuantities[i]['id']) {
-        order.push({ ...orderedCake, quantity: cakeQuantities[i]['quantity'] });
-      }
-    }
-    return order;
-  }
-  findOrderedCakes();
+  findOrderedCakes(order, cakeQuantities, cakes);
 
   // get total price of the current order
   function getTotalPrice() {
