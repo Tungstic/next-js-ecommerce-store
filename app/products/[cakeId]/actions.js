@@ -3,7 +3,7 @@
 import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-import updateCookie from './getCookieArray';
+import updateCookie from './updateCookie';
 
 export async function addCakeToCart(cakeId, quantity) {
   const cakeQuantityCookie = getCookie('cart');
