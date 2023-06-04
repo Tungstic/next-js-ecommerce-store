@@ -14,3 +14,14 @@ test('update cookie quantity in the cart', () => {
     quantity: 6,
   });
 });
+
+test('add new cake to cookie array', () => {
+  const cookieObject = undefined;
+  const cookieArrayEmpty = [];
+  const cakeId = 1;
+  const quantity = 3;
+
+  updateCookie(cookieObject, cookieArrayEmpty, cakeId, quantity);
+
+  expect(cookieArrayEmpty).toStrictEqual([{ id: 1, quantity: 3 }]);
+});
