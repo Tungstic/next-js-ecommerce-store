@@ -12,6 +12,7 @@ export default function HomePage() {
           priority={true}
           width={600}
           height={400}
+          unoptimized={true}
         />
         <p>
           ... where every bite is a celebration of flavor and artistry. Indulge
