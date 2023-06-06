@@ -17,6 +17,7 @@ export default async function ProductsPage() {
             <div className={styles.oneCake} key={`word-div-${cake.id}`}>
               <Image
                 src={`/${cake.name}.jpg`}
+                priority={true}
                 unoptimized={true}
                 width={200}
                 height={300}
