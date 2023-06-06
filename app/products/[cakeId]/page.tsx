@@ -28,6 +28,7 @@ export default async function CakePage(props: Props) {
           src={`/${singleCake.name}.jpg`}
           alt={`the photo of the ${singleCake.name}`}
           priority={true}
+          unoptimized={true}
           width={200}
           height={300}
         />
