@@ -7,6 +7,8 @@ import getTotalPrice from './getTotalPrice';
 import styles from './page.module.scss';
 import RemoveFromCart from './RemoveButton';
 
+export const dynamic = 'force-dynamic';
+
 export default async function CartPage() {
   const cakes = await getCakes();
   // get all current cakes added to cart as a cookie

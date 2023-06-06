@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { getCakes } from '../../database/cakes';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ProductsPage() {
   const cakes = await getCakes();
 

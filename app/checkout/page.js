@@ -5,6 +5,8 @@ import findOrderedCakes from '../cart/findOrderedCakes';
 import getTotalPrice from '../cart/getTotalPrice';
 import UserInfoForm from './UserInfoForm';
 
+export const dynamic = 'force-dynamic';
+
 export default async function CheckoutPage() {
   const cakes = await getCakes();
   // get all current cakes added to cart as a cookie
