@@ -14,24 +14,23 @@ export default async function ProductsPage() {
       <div className={styles.gridOfCakes}>
         {cakes.map((cake) => {
           return (
-            // <div className={styles.oneCake} key={`cake-div-${cake.id}`}>
-            <Image
-              src={`/${cake.name}.avif`}
-              priority
-              unoptimized
-              placeholder="blur"
-              width={200}
-              height={300}
-              alt={`photo of ${cake.name} cake`}
-              key={`cake-${cake.id}`}
-            />
-            /*  <Link
+            <div className={styles.oneCake} key={`cake-div-${cake.id}`}>
+              <Image
+                src={`/${cake.name}.avif`}
+                priority
+                unoptimized
+                placeholder="blur"
+                width={200}
+                height={300}
+                alt={`photo of ${cake.name} cake`}
+              />
+              <Link
                 href={`/products/${cake.id}`}
                 data-test-id={`product-${cake.id}`}
               >
                 {cake.name}
               </Link>
-            </div> */
+            </div>
           );
         })}
       </div>
