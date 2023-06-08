@@ -19,6 +19,7 @@ export default async function ProductsPage() {
                 src={`/${cake.name}.avif`}
                 priority
                 unoptimized
+                placeholder="blur"
                 width={200}
                 height={300}
                 alt={`photo of ${cake.name} cake`}
