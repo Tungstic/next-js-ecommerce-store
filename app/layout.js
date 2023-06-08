@@ -37,7 +37,10 @@ export default function RootLayout({ children }) {
             </Link>
             <Link href="/cart" data-test-id="cart-link">
               Shopping cart
-              <span data-test-id="cart-count">{`(${totalQuantity})`}</span>
+              <span
+                aria-label="number of cakes in the cart"
+                data-test-id="cart-count"
+              >{`(${totalQuantity})`}</span>
             </Link>
           </nav>
           {children}

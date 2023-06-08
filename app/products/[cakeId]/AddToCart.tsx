@@ -31,14 +31,22 @@ export default function AddToCart(props: Props) {
     <>
       <label className={styles.moreOrLessCake}>
         Quantity (max. 10)
-        <button onClick={incrementCake}>+</button>
+        <button aria-label="Add 1 to cake quantity" onClick={incrementCake}>
+          +
+        </button>
         <input
           readOnly
           name="show-quantity"
           data-test-id="product-quantity"
+          aria-live="polite"
           value={quantity}
         />
-        <button onClick={decrementCake}>-</button>
+        <button
+          aria-label="Subtract 1 from cake quantity"
+          onClick={decrementCake}
+        >
+          -
+        </button>
       </label>
       <form
         name="cake-to-cookies"
