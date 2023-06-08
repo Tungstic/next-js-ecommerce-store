@@ -38,7 +38,6 @@ export default function AddToCart(props: Props) {
           readOnly
           name="show-quantity"
           data-test-id="product-quantity"
-          aria-live="polite"
           value={quantity}
         />
         <button

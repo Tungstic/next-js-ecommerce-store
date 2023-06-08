@@ -9,7 +9,7 @@ test('cart test', async ({ page }) => {
 
   await expect(page.getByTestId('cart-count')).toContainText('1');
 
-  await page.getByRole('button', { name: 'Quantity (max. 10) 1 -' }).click();
+  await page.getByRole('button', { name: 'Add 1 to cake quantity' }).click();
   await page.getByTestId('product-add-to-cart').click();
 
   await expect(page.getByTestId('cart-count')).toContainText('3');
