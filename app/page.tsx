@@ -14,7 +14,7 @@ export default function HomePage() {
           height={400}
           unoptimized={true}
         />
-        <p>
+        <p style={{ fontSize: '1.2rem' }}>
           ... where every bite is a celebration of flavor and artistry. Indulge
           your senses in a world of delightful confections that are as delicious
           as they are visually stunning. Our passion for crafting the perfect

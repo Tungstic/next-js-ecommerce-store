@@ -34,7 +34,7 @@ export default async function CakePage(props: Props) {
         />
       </div>
       <div className={styles.text}>
-        <div>{singleCake.description}</div>
+        <div style={{ fontSize: '1.2rem' }}>{singleCake.description}</div>
         <div data-test-id="product-price">{`Price: €${singleCake.price}`}</div>
         <AddToCart cakeId={singleCake.id} />
       </div>
