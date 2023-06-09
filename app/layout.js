@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
     : parseJson(cakeQuantityCookie);
 
   const totalQuantity = cakeQuantities.reduce((acc, currentValue) => {
+    // returns a number
     return acc + currentValue.quantity;
   }, 0);
 
@@ -37,11 +38,17 @@ export default function RootLayout({ children }) {
             </Link>
             <Link href="/cart" data-test-id="cart-link">
               Shopping cart
-              <span
+              {/*     <span
                 aria-label="number of cakes in the cart"
                 data-test-id="cart-count"
-              >{`(${totalQuantity})`}</span>
+              >{`(${totalQuantity})`}</span> */}
             </Link>
+            <span
+              aria-label="number of cakes in the cart"
+              data-test-id="cart-count"
+            >
+              {totalQuantity}
+            </span>
           </nav>
           {children}
         </header>
