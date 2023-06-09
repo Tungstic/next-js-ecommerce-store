@@ -27,7 +27,8 @@ export default async function CakePage(props: Props) {
           data-test-id="product-image"
           src={`/${singleCake.name}.avif`}
           alt={`the photo of the ${singleCake.name}`}
-          priority={true}
+          priority
+          unoptimized
           width={200}
           height={300}
         />
