@@ -11,13 +11,13 @@ export default function RemoveFromCart(props: Props) {
   const router = useRouter();
 
   return (
-    <form
-      action={async () => {
+    <button
+      onClick={async () => {
         router.refresh();
         await removeCakeFromCart(props.cakeId);
       }}
     >
-      <button>Remove</button>
-    </form>
+      Remove
+    </button>
   );
 }
