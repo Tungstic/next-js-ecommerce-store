@@ -67,7 +67,7 @@ export default async function CartPage() {
         </ul>
       )}
       <div className={styles.total} data-test-id="cart-total">
-        Total price is: €{totalPrice}
+        {totalPrice}
       </div>
       {order.length > 0 ? (
         <CheckoutButton data-test-id="cart-checkout" />
