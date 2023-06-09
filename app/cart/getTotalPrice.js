@@ -7,6 +7,6 @@ export default function getTotalPrice(order) {
       return acc + currentValue;
     });
   } else {
-    return '0';
+    return parseInt('0');
   }
 }

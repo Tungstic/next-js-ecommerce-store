@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     ? []
     : parseJson(cakeQuantityCookie);
 
-  const totalQuantity = cakeQuantities.reduce((acc, currentValue) => {
+  const totalQuantity = cakeQuantities?.reduce((acc, currentValue) => {
     // returns a number
     return acc + currentValue.quantity;
   }, 0);

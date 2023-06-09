@@ -26,19 +26,8 @@ export default async function CartPage() {
   if (cakeQuantities.length > 0) {
     findOrderedCakes(order, cakeQuantities, cakes);
   } else {
-    return (order = []);
+    order = [];
   }
-  /*   function getSubtotal() {
-    let sum = 0;
-    if (order.length > 0) {
-      order.map((obj) => {
-        sum = obj.price * obj.quantity;
-        return sum;
-      });
-    }
-  }
-
-  const subTotal = getSubtotal(); */
 
   // get total price of the current order
   const totalPrice = getTotalPrice(order);
