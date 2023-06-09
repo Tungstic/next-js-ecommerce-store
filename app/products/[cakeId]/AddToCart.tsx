@@ -59,7 +59,7 @@ export default function AddToCart(props: Props) {
         name="cake-to-cookies"
         action={async () => {
           router.refresh();
-          await addCakeToCart(props.cakeId, quantity);
+          await addCakeToCart(props.cakeId, parseInt(quantity));
         }}
       >
         <button data-test-id="product-add-to-cart">Add to cart</button>
