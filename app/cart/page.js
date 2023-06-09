@@ -44,6 +44,7 @@ export default async function CartPage() {
                   Quantity:
                   {` ${item.quantity}`}
                 </div>
+                <div>Subtotal: {item.price * item.quantity}</div>
                 <RemoveFromCart
                   cakeId={item.id}
                   data-test-id={`cart-product-remove-${item.id}`}
@@ -54,7 +55,7 @@ export default async function CartPage() {
         </ul>
       )}
       <div className={styles.total} data-test-id="cart-total">
-        Total price is: {` €${totalPrice}`}
+        Total price is: €{totalPrice}
       </div>
       {order.length > 0 ? (
         <CheckoutButton data-test-id="cart-checkout" />
