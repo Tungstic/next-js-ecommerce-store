@@ -135,6 +135,7 @@ export default function UserInfoForm() {
         onClick={async () => {
           await emptyCart();
           router.push('/checkout/thank-you');
+          router.refresh();
         }}
       >
         Confirm order

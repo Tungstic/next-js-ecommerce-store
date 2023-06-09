@@ -19,10 +19,15 @@ export default async function CartPage() {
     ? []
     : parseJson(cakeQuantityCookie);
 
-  // get an array of only those cakes that are in the cart + their quantities
-  const order = [];
-  findOrderedCakes(order, cakeQuantities, cakes);
+  console.log(cakeQuantities);
 
+  // get an array of only those cakes that are in the cart + their quantities
+  let order = [];
+  if (cakeQuantities.length > 0) {
+    findOrderedCakes(order, cakeQuantities, cakes);
+  } else {
+    return (order = []);
+  }
   /*   function getSubtotal() {
     let sum = 0;
     if (order.length > 0) {
