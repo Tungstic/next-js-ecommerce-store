@@ -67,7 +67,7 @@ export default async function CartPage() {
         {totalPrice}
       </div>
       {order.length > 0 ? (
-        <CheckoutButton data-test-id="cart-checkout" />
+        <CheckoutButton />
       ) : (
         <div style={{ fontSize: '1.2rem' }}>Nothing to checkout</div>
       )}
