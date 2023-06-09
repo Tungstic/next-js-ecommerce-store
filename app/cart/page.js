@@ -43,8 +43,9 @@ export default async function CartPage() {
                 <div data-test-id={`cart-product-quantity-${item.id}`}>
                   Quantity:
                   {` ${item.quantity}`}
+                  Subtotal: {item.price * item.quantity}
                 </div>
-                <div>Subtotal: {item.price * item.quantity}</div>
+
                 <RemoveFromCart
                   cakeId={item.id}
                   data-test-id={`cart-product-remove-${item.id}`}
