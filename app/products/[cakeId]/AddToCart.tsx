@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { addCakeToCart } from './actions';
 import styles from './addToCart.module.scss';
 
@@ -11,9 +11,9 @@ type Props = {
 
 export default function AddToCart(props: Props) {
   // declare state variable for quantity
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState('1');
   const router = useRouter();
-
+  /*
   function incrementCake() {
     setQuantity(quantity + 1);
   }
@@ -22,40 +22,38 @@ export default function AddToCart(props: Props) {
       return;
     }
     setQuantity(quantity - 1);
-  }
-
-  /*   function typeInQuantity(event: FormEvent<HTMLInputElement>) {
-    if (Number(event.currentTarget.value) >= 1) {
-      setQuantity(Number(event.currentTarget.value));
-    }
   } */
+
+  console.log(typeof quantity);
+
+  function handleInput(event: ChangeEvent<HTMLInputElement>) {
+    const result = event.target.value.replace(/\D/g, '');
+
+    setQuantity(result);
+  }
 
   return (
     <>
       <label className={styles.moreOrLessCake}>
         Quantity
-        <button
+        {/*     <button
           aria-label="Add 1 to cake quantity"
           onClick={() => incrementCake()}
         >
           +
-        </button>
+        </button> */}
         <input
           name="show-quantity"
           data-test-id="product-quantity"
           value={quantity}
-          onChange={(event) => {
-            Number(event.currentTarget.value) >= 0
-              ? setQuantity(Number(event.currentTarget.value))
-              : setQuantity(1);
-          }}
+          onChange={handleInput}
         />
-        <button
+        {/* <button
           aria-label="Subtract 1 from cake quantity"
           onClick={() => decrementCake()}
         >
           -
-        </button>
+        </button> */}
       </label>
       <form
         name="cake-to-cookies"
