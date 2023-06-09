@@ -4,5 +4,5 @@ export const metadata = {
 };
 
 export default function ThankYouPage() {
-  return <main>Thank you for your order</main>;
+  return <h1>Thank you for your order</h1>;
 }
