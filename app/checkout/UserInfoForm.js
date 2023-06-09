@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { emptyCart } from './emptyCart';
 import styles from './form.module.scss';
 
 export default function UserInfoForm() {
@@ -131,7 +132,10 @@ export default function UserInfoForm() {
         type="button"
         data-test-id="checkout-confirm-order"
         disabled={!isValid}
-        onClick={() => router.push('/checkout/thank-you')}
+        onClick={async () => {
+          await emptyCart();
+          router.push('/checkout/thank-you');
+        }}
       >
         Confirm order
       </button>
