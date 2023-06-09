@@ -23,17 +23,17 @@ export default async function CartPage() {
   const order = [];
   findOrderedCakes(order, cakeQuantities, cakes);
 
-  function getSubtotal() {
+  /*   function getSubtotal() {
     let sum = 0;
     if (order.length > 0) {
       order.map((obj) => {
         sum = obj.price * obj.quantity;
+        return sum;
       });
     }
-    return sum;
   }
 
-  const subTotal = getSubtotal();
+  const subTotal = getSubtotal(); */
 
   // get total price of the current order
   const totalPrice = getTotalPrice(order);
@@ -50,13 +50,12 @@ export default async function CartPage() {
                 className={styles.cakeItem}
                 key={`cake ${item.id}`}
               >
-                {`${item.name} cake €`}
-                {item.price}
+                <div>{`${item.name} cake €`}</div>
+                <div>{item.price}</div>
                 <div data-test-id={`cart-product-quantity-${item.id}`}>
-                  Quantity:
-                  {` ${item.quantity}`}
-                  Subtotal: {subTotal}
+                  {item.quantity}
                 </div>
+                <div>Subtotal: {item.price * item.quantity}</div>
 
                 <RemoveFromCart
                   cakeId={item.id}
