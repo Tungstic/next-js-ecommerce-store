@@ -12,6 +12,7 @@ export default function RemoveFromCart(props: Props) {
 
   return (
     <button
+      data-test-id={`cart-product-remove-${props.cakeId}`}
       onClick={async () => {
         router.refresh();
         await removeCakeFromCart(props.cakeId);

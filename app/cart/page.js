@@ -57,10 +57,7 @@ export default async function CartPage() {
                 </div>
                 <div>Subtotal: {item.price * item.quantity}</div>
 
-                <RemoveFromCart
-                  cakeId={item.id}
-                  data-test-id={`cart-product-remove-${item.id}`}
-                />
+                <RemoveFromCart cakeId={item.id} />
               </li>
             );
           })}
