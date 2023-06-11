@@ -10,3 +10,23 @@ This project is built within the [Upleveled](https://upleveled.io/) bootcamp pro
 4. PostgreSQL and Ley.
 5. Playwright.
 6. Jest.
+7. Deployment: Fly.io (main branch), Vercel (vercel-deploy branch).
+
+## How to set it up
+
+To initialize the repository, run:
+`pnpm install`
+
+To start the localhost, run:
+`pnpm dev`
+
+Simultaneously, run Postgres localhost for the database.
+
+## Deployment (only for Vercel since Fly.io offers insufficient resources)
+
+1. Create an account in Vercel.
+2. Create a postgres storage in Vercel (select Frankfurt).
+3. Create a project in Vercel.
+   - Override the install command with `pnpm install && pnpm migrate up`
+4. Connect storage with project in Project > Storage > Connect.
+5. Deploy (every push to GitHub will automatically re-deploy).
