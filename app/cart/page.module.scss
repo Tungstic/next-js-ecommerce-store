@@ -3,16 +3,34 @@
   padding: 16px;
   padding-left: 0;
 
-  button {
+  & > * {
+    display: inline;
+  }
+
+  & > :nth-child(3) {
+    margin-right: 0;
+  }
+
+  & > span {
     margin-left: 0;
+  }
+
+  button {
+    margin-left: 64px;
     margin-top: 8px;
   }
 }
 
 .total {
+  margin-left: 0;
   padding: 16px 0;
+  display: flex;
 
-  & + * {
-    margin-left: 16px;
+  & > div {
+    margin-right: 0;
+
+    & + div {
+      margin-left: 0;
+    }
   }
 }

@@ -16,3 +16,14 @@
     margin-top: auto;
   }
 }
+
+.price {
+  & > span {
+    margin-left: 0;
+    margin-right: 0;
+
+    & + span {
+      margin-left: 0;
+    }
+  }
+}

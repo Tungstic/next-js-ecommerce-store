@@ -36,19 +36,21 @@ export default function RootLayout({ children }) {
             <Link href="/products" data-test-id="products-link">
               Products
             </Link>
-            <Link href="/cart" data-test-id="cart-link">
+            <Link
+              style={{ marginRight: 0 }}
+              href="/cart"
+              data-test-id="cart-link"
+            >
               Shopping cart
-              {/*     <span
-                aria-label="number of cakes in the cart"
-                data-test-id="cart-count"
-              >{`(${totalQuantity})`}</span> */}
             </Link>
             <span
+              style={{ marginRight: 0 }}
               aria-label="number of cakes in the cart"
               data-test-id="cart-count"
             >
               {totalQuantity}
             </span>
+            <span style={{ marginLeft: 0 }}>🍰</span>
           </nav>
           {children}
         </header>

@@ -44,12 +44,13 @@ export default async function CartPage() {
                 className={styles.cakeItem}
                 key={`cake ${item.id}`}
               >
-                <div>{`${item.name} cake €`}</div>
-                <div>{item.price}</div>
-                <div data-test-id={`cart-product-quantity-${item.id}`}>
+                <div>{`${item.name} cake`}</div>
+                <div>{`€ ${item.price}`}</div>
+                <div>Quantity:</div>
+                <span data-test-id={`cart-product-quantity-${item.id}`}>
                   {item.quantity}
-                </div>
-                <div>Subtotal: {item.price * item.quantity}</div>
+                </span>
+                <div>{`Subtotal: € ${item.price * item.quantity}`}</div>
 
                 <RemoveFromCart cakeId={item.id} />
               </li>
@@ -57,8 +58,9 @@ export default async function CartPage() {
           })}
         </ul>
       )}
-      <div className={styles.total} data-test-id="cart-total">
-        {totalPrice}
+      <div className={styles.total}>
+        <div>Total price: €</div>
+        <div data-test-id="cart-total">{totalPrice}</div>
       </div>
       {order.length > 0 ? (
         <CheckoutButton />
