@@ -15,5 +15,5 @@ test('show total of 0 if order is empty', () => {
   const order = [];
   const total = getTotalPrice(order);
 
-  expect(total).toBe('0');
+  expect(total).toBe(0);
 });
