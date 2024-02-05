@@ -9,6 +9,6 @@ This project is built within the [Upleveled](https://upleveled.io/) bootcamp pro
 5. PostgreSQL and Ley.
 6. Playwright.
 7. Jest.
-8. Deployment: Fly.io.
+8. Deployment: Vercel (Fly.io - deployed, then deleted).
 
 
